@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tent_main_banners",
+  "info": {
+    "singularName": "tent-main-banner",
+    "pluralName": "tent-main-banners",
+    "displayName": "Tent main banner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

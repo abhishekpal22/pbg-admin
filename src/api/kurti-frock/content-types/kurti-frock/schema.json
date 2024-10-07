@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kurti_frocks",
+  "info": {
+    "singularName": "kurti-frock",
+    "pluralName": "kurti-frocks",
+    "displayName": "kurti-frock"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

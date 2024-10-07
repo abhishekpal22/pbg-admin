@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jeans_tops",
+  "info": {
+    "singularName": "jeans-top",
+    "pluralName": "jeans-tops",
+    "displayName": "Jeans-top"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

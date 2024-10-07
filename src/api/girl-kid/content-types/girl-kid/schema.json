@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "girl_kids",
+  "info": {
+    "singularName": "girl-kid",
+    "pluralName": "girl-kids",
+    "displayName": "Girl Kid"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
