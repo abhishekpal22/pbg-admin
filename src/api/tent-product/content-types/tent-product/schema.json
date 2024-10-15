@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tent_products",
+  "info": {
+    "singularName": "tent-product",
+    "pluralName": "tent-products",
+    "displayName": "Tent product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

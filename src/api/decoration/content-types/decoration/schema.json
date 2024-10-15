@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "decorations",
+  "info": {
+    "singularName": "decoration",
+    "pluralName": "decorations",
+    "displayName": "Decoration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

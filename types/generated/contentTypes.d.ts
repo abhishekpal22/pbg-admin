@@ -580,6 +580,35 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBoyKidBoyKid extends Struct.CollectionTypeSchema {
+  collectionName: 'boy_kids';
+  info: {
+    singularName: 'boy-kid';
+    pluralName: 'boy-kids';
+    displayName: 'Boy kid';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::boy-kid.boy-kid'
+    >;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -611,6 +640,66 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCustomerSayCustomerSay extends Struct.CollectionTypeSchema {
+  collectionName: 'customer_says';
+  info: {
+    singularName: 'customer-say';
+    pluralName: 'customer-says';
+    displayName: 'Customer Say';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::customer-say.customer-say'
+    >;
+  };
+}
+
+export interface ApiDecorationDecoration extends Struct.CollectionTypeSchema {
+  collectionName: 'decorations';
+  info: {
+    singularName: 'decoration';
+    pluralName: 'decorations';
+    displayName: 'Decoration';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::decoration.decoration'
+    >;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -633,6 +722,34 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+  };
+}
+
+export interface ApiFooterLinkFooterLink extends Struct.CollectionTypeSchema {
+  collectionName: 'footer_links';
+  info: {
+    singularName: 'footer-link';
+    pluralName: 'footer-links';
+    displayName: 'Footer link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    link: Schema.Attribute.String & Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer-link.footer-link'
+    >;
   };
 }
 
@@ -722,6 +839,35 @@ export interface ApiJeansTopJeansTop extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiJeansTshirtJeansTshirt extends Struct.CollectionTypeSchema {
+  collectionName: 'jeans_tshirts';
+  info: {
+    singularName: 'jeans-tshirt';
+    pluralName: 'jeans-tshirts';
+    displayName: 'Jeans tshirt';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::jeans-tshirt.jeans-tshirt'
+    >;
+  };
+}
+
 export interface ApiKurtiFrockKurtiFrock extends Struct.CollectionTypeSchema {
   collectionName: 'kurti_frocks';
   info: {
@@ -780,6 +926,30 @@ export interface ApiLehengaLehenga extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLogoLogo extends Struct.CollectionTypeSchema {
+  collectionName: 'logos';
+  info: {
+    singularName: 'logo';
+    pluralName: 'logos';
+    displayName: 'Logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::logo.logo'>;
+  };
+}
+
 export interface ApiMainSliderMainSlider extends Struct.CollectionTypeSchema {
   collectionName: 'main_sliders';
   info: {
@@ -808,6 +978,35 @@ export interface ApiMainSliderMainSlider extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::main-slider.main-slider'
+    >;
+  };
+}
+
+export interface ApiPantShirtPantShirt extends Struct.CollectionTypeSchema {
+  collectionName: 'pant_shirts';
+  info: {
+    singularName: 'pant-shirt';
+    pluralName: 'pant-shirts';
+    displayName: 'Pant shirt';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pant-shirt.pant-shirt'
     >;
   };
 }
@@ -862,6 +1061,35 @@ export interface ApiTentMainBannerTentMainBanner
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::tent-main-banner.tent-main-banner'
+    >;
+  };
+}
+
+export interface ApiTentProductTentProduct extends Struct.CollectionTypeSchema {
+  collectionName: 'tent_products';
+  info: {
+    singularName: 'tent-product';
+    pluralName: 'tent-products';
+    displayName: 'Tent product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tent-product.tent-product'
     >;
   };
 }
@@ -1244,16 +1472,24 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::boy-kid.boy-kid': ApiBoyKidBoyKid;
       'api::category.category': ApiCategoryCategory;
+      'api::customer-say.customer-say': ApiCustomerSayCustomerSay;
+      'api::decoration.decoration': ApiDecorationDecoration;
       'api::event.event': ApiEventEvent;
+      'api::footer-link.footer-link': ApiFooterLinkFooterLink;
       'api::girl-kid.girl-kid': ApiGirlKidGirlKid;
       'api::global.global': ApiGlobalGlobal;
       'api::jeans-top.jeans-top': ApiJeansTopJeansTop;
+      'api::jeans-tshirt.jeans-tshirt': ApiJeansTshirtJeansTshirt;
       'api::kurti-frock.kurti-frock': ApiKurtiFrockKurtiFrock;
       'api::lehenga.lehenga': ApiLehengaLehenga;
+      'api::logo.logo': ApiLogoLogo;
       'api::main-slider.main-slider': ApiMainSliderMainSlider;
+      'api::pant-shirt.pant-shirt': ApiPantShirtPantShirt;
       'api::saree.saree': ApiSareeSaree;
       'api::tent-main-banner.tent-main-banner': ApiTentMainBannerTentMainBanner;
+      'api::tent-product.tent-product': ApiTentProductTentProduct;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

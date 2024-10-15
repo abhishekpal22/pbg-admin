@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_says",
+  "info": {
+    "singularName": "customer-say",
+    "pluralName": "customer-says",
+    "displayName": "Customer Say",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

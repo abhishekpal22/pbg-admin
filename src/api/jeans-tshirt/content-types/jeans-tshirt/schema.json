@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jeans_tshirts",
+  "info": {
+    "singularName": "jeans-tshirt",
+    "pluralName": "jeans-tshirts",
+    "displayName": "Jeans tshirt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
