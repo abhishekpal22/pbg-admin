@@ -24,22 +24,11 @@ module.exports = ({ env }) => {
     },
     postgres: {
       connection: {
-        // Use connectionString if you want to configure it directly from DATABASE_URL, or use individual connection properties
-        connectionString: env('DATABASE_URL'), // Preferably use DATABASE_URL if you're using an external provider
-        host: env('DATABASE_HOST', 'localhost'), // Default to localhost for local development
-        port: env.int('DATABASE_PORT', 5432), // Default port for PostgreSQL
-        database: env('DATABASE_NAME', 'pbg'), // Replace 'strapi' with your DB name
-        user: env('DATABASE_USERNAME', 'postgres'), // PostgreSQL username (default: 'postgres')
-        password: env('DATABASE_PASSWORD', 'Aa12345@'), // Replace with your password
-        ssl: env.bool('DATABASE_SSL', false) && { // If you need SSL (for production environments)
-          key: env('DATABASE_SSL_KEY', undefined),
-          cert: env('DATABASE_SSL_CERT', undefined),
-          ca: env('DATABASE_SSL_CA', undefined),
-          capath: env('DATABASE_SSL_CAPATH', undefined),
-          cipher: env('DATABASE_SSL_CIPHER', undefined),
-          rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', false),
+        // Use connectionString to configure from DATABASE_URL
+        connectionString: env('DATABASE_URL'), // This is where the Neon connection string will go
+        ssl: {
+          rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true), // Always set to true if SSL is required by Neon
         },
-        schema: env('DATABASE_SCHEMA', 'public'), // Default schema is public
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) }, // Connection pool settings
     },
@@ -53,7 +42,7 @@ module.exports = ({ env }) => {
 
   return {
     connection: {
-      client, // Ensures the correct client is used (postgres in this case)
+      client, // Ensures the correct client is used (postgres here)
       ...connections[client], // Selects the corresponding config for the client (postgres here)
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000), // Timeout for acquiring connections
     },
