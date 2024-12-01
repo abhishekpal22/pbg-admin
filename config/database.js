@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite); // Ensure 'postgres' is the client being used
+  const client = env('DATABASE_CLIENT', 'sqlite'); // Ensure 'postgres' is the client being used
 
   const connections = {
     mysql: {
